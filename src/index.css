@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;800&display=swap');
+
+:root {
+  font-family: 'Outfit', sans-serif;
+  color: #33658aff;
+  background-color: #e1eef7;
+}
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: cornflowerblue;
+}
