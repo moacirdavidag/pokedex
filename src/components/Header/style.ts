@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../constants/colors";
 
 export const HeaderPokedex = styled.header`
-    width: 100vw;
+    max-width: 100vw;
     height: auto;
     padding: 20px;
     text-align: center;

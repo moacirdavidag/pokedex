@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Pagination, PokemonCard, PokemonListWrapper } from "./style";
 
-import { api } from "../../services/api";
+import { api } from "../../../../services/api";
 import axios, { AxiosResponse } from "axios";
-import pokemonTypeColors from "../../constants/colors";
+import pokemonTypeColors from "../../../../constants/colors";
+import { Loading } from "../../../../components/Loading";
 
 export const HomeList = () => {
     const [pokemons, setPokemons]: any = useState([]);
@@ -23,7 +24,7 @@ export const HomeList = () => {
             api.get(`?limit=9&offset=${offset}`)
                 .then((res: AxiosResponse<any>) => {
                     const pokemons = res.data.results;
-                    const pokemonPromises = pokemons.map((pokemon: any) => {
+                    const pokemonPromises: Array<Promise<any>> = pokemons.map((pokemon: any) => {
                         return axios.get(pokemon.url)
                             .then((response) => {
                                 return response.data;
@@ -42,12 +43,12 @@ export const HomeList = () => {
                     console.error("Erro ao buscar a lista de pokemons", error);
                 });
         };
-
         fetchPokemons();
     }, [offset]);
     return (
         <>
             <PokemonListWrapper>
+                {pokemons.length === 0 && <Loading />}
                 {
                     pokemons.map((pokemon: any) => {
                         return (
@@ -57,6 +58,9 @@ export const HomeList = () => {
                                         <img src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} />
                                     </div>
                                     <div>
+                                        <span className="idPokemon">
+                                            {`#${pokemon.id}`}
+                                        </span>
                                         <span className="pokemonName">
                                             {pokemon.name}
                                         </span>
@@ -69,14 +73,15 @@ export const HomeList = () => {
                     })
                 }
             </PokemonListWrapper>
-            <Pagination>
-                <button onClick={() => {
-                    handleOffset(-9);
-                }}>Anterior</button>
-                <button onClick={() => {
-                    handleOffset(9);
-                }}>Próximo</button>
-            </Pagination>
+            {pokemons.length !== 0 &&
+                <Pagination>
+                    <button onClick={() => {
+                        handleOffset(-9);
+                    }}>Anterior</button>
+                    <button onClick={() => {
+                        handleOffset(9);
+                    }}>Próximo</button>
+                </Pagination>}
         </>
     )
 }

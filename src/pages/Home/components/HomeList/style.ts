@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { colors } from '../../constants/colors';
+import { colors } from '../../../../constants/colors';
 
 export const PokemonListWrapper = styled.div`
     width: 920px;
@@ -12,7 +12,7 @@ export const PokemonListWrapper = styled.div`
     grid-gap: 5px;
 `;
 
-export const PokemonCard = styled.div<{$bgColor: string, $bgTypeColor: string}>`
+export const PokemonCard = styled.div<{ $bgColor: string, $bgTypeColor: string }>`
     width: 300px;
     height: 150px;
     border-radius: 10px;
@@ -39,6 +39,7 @@ export const PokemonCard = styled.div<{$bgColor: string, $bgTypeColor: string}>`
     & div span.pokemonName {
         font-weight: 400;
         font-size: 28px;
+        text-transform: capitalize;
     }
     & div span.type {
         min-width: 80px;
@@ -49,7 +50,11 @@ export const PokemonCard = styled.div<{$bgColor: string, $bgTypeColor: string}>`
         border-radius: 5px;
         font-size: 20px;
         text-align: center;
+        text-transform: capitalize;
         background-color: ${props => props.$bgTypeColor};
+    }
+    & span.pokemonId {
+        font-size: 14px;
     }
 `;
 

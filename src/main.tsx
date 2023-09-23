@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 
 import { Header } from './components/Header';
+import { PokemonPage } from './pages/PokemonPage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/pokemon/:id' element={<PokemonPage />} />
       </Routes>
     </Router>
   </React.StrictMode>,
