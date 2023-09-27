@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
 import { colors } from '../../../../constants/colors';
+import { device } from '../../../../styles/globals';
 
 export const PokemonListWrapper = styled.div`
     width: 920px;
@@ -10,6 +11,18 @@ export const PokemonListWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 5px;
+    @media ${device.mobile } {
+        grid-template-columns: 1fr;
+        max-width: 100vw;
+    }
+    @media ${device.tablets} {
+        max-width: 100vw;
+        grid-template-columns: 1fr;
+    }
+    @media ${device.large} {
+        max-width: 100vw;
+        grid-template-columns: 1fr;
+    }
 `;
 
 export const PokemonCard = styled.div<{ $bgColor: string, $bgTypeColor: string }>`
@@ -55,6 +68,21 @@ export const PokemonCard = styled.div<{ $bgColor: string, $bgTypeColor: string }
     }
     & span.pokemonId {
         font-size: 14px;
+    }
+    @media ${device.mobile } {
+        width: 350px;
+        grid-template-columns: 1fr;
+        height: 250px;
+    }
+    @media ${device.tablets} {
+        width: 720px;
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    @media ${device.large} {
+        width: 920px;
+        grid-template-columns: 1fr;
+        height: auto;
     }
 `;
 

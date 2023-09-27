@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../constants/colors";
+import { device } from "../../styles/globals";
 
 export const DetailsWrapper = styled.div`
     height: calc(100vh - 130.4px);
@@ -7,6 +8,12 @@ export const DetailsWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media ${device.mobile} {
+        flex-direction: column;
+    }
+    @media ${device.tablets} {
+        flex-direction: column;
+    }
 `;
 
 export const PokemonDetailImage = styled.div<{ $bgColor: string, $bgTypeColor: string }>`
@@ -30,6 +37,18 @@ export const PokemonDetailImage = styled.div<{ $bgColor: string, $bgTypeColor: s
         border-radius: 10px;
         margin: 40px 0;
     }
+    @media ${device.mobile} {
+        width: 100vw;
+        padding: 20px;
+    }
+    @media ${device.tablets} {
+        width: 100vw;
+        padding: 40px;
+        & > img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
 `;
 
 export const Details = styled.div`
@@ -37,6 +56,15 @@ export const Details = styled.div`
     height: 100%;
     background-color: #FFFFFF;
     padding: 40px;
+    @media ${device.mobile} {
+        width: 100vw;
+    }
+    @media ${device.tablets} {
+        width: 100vw;
+    }
+    @media ${device.large} {
+        padding: 10px;
+    }
 `;
 
 export const PokemonName = styled.span`
@@ -53,5 +81,8 @@ export const PokemonInfo = styled.div`
     margin: 20px 0;
     & span {
         color: #616161;
+    }
+    @media ${device.tablets} {
+        font-size: 32px;
     }
 `;
