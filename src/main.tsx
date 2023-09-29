@@ -14,7 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/pokemon/:id' element={<PokemonPage />} />
+        <Route path='/pokemon/:search' element={<PokemonPage />} />
       </Routes>
     </Router>
   </React.StrictMode>,

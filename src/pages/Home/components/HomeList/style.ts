@@ -66,8 +66,9 @@ export const PokemonCard = styled.div<{ $bgColor: string, $bgTypeColor: string }
         text-transform: capitalize;
         background-color: ${props => props.$bgTypeColor};
     }
-    & span.pokemonId {
+    & span.idPokemon {
         font-size: 14px;
+        align-self: flex-end;
     }
     @media ${device.mobile } {
         width: 350px;

@@ -5,13 +5,13 @@ import { api } from '../../services/api';
 import pokemonTypeColors from '../../constants/colors';
 
 export const PokemonPage = () => {
-    const { id } = useParams();
+    const { search } = useParams();
     const [pokemon, setPokemon]: any = useState(null);
 
     useEffect(() => {
         const fetchPokemon = async () => {
             try {
-                const response = await api.get(`/${id}`);
+                const response = await api.get(`/${search}`);
                 setPokemon(response.data);
             } catch (error : any) {
                 console.log(`Ocorreu um erro: ${error.message}`);
@@ -19,7 +19,7 @@ export const PokemonPage = () => {
         };
 
         fetchPokemon();
-    }, [id]);
+    }, [search]);
 
     if (!pokemon || !pokemon.sprites || !pokemon.sprites.other || !pokemon.sprites.other.dream_world || !pokemon.sprites.other.dream_world.front_default) {
         return <p>Carregando...</p>;
@@ -47,7 +47,7 @@ export const PokemonPage = () => {
                     Habilidades: {
                         pokemon.abilities.map((ability : any) => {
                             return(
-                                <span>
+                                <span key={Array(ability).indexOf(ability)}>
                                     {`${ability.ability.name} `}
                                 </span>
                             )
