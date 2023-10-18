@@ -1,27 +1,64 @@
-# React + TypeScript + Vite
+# Pokédex
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Projeto utilizando Typescript, React, Vite, Axios e a biblioteca *styled-components* na criação dos estilos, que consome a [API Pokédex](https://pokeapi.co/) e retorna uma lista de pokemons disponíveis. O projeto **está em andamento**, pois novas *features* serão adicionadas.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Imagem do Pokédex](https://imgur.com/d9q8vWT.png)
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Features
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+- Paginação;
+- Busca por Pokemon;
+- Responsividade;
+
+## ⚙️ Tecnologias e bibliotecas utilizadas
+
+- TypeScript;
+- Node.js;
+- React;
+- Vite;
+- Axios;
+- *styled-compoents*.
+
+## 🚧 Em andamento
+
+- Sistema de favoritar pokemons.
+
+## Como rodar
+
+1- Clone este repositório:
+
+```
+git clone https://github.com/moacirdavidag/pokedex.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2- Vá para o diretório do projeto clonado e instale as dependências do projeto:
+
+```
+npm install
+```
+
+3- Rode o projeto 🔥:
+
+```
+npm run dev
+```
+
+**ou..**
+
+```
+npm run preview
+```
+
+## 👨‍💻 Contribuindo...
+
+Dê um fork neste projeto e implemente suas sugestões, correções e melhorias. Depois, abra um *pull request* e analisarei as mudanças. :)
+
+
+  
